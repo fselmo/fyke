@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/fyke/__init__.py
+src/fyke/eth.py
+src/fyke/main.py
+src/fyke.egg-info/PKG-INFO
+src/fyke.egg-info/SOURCES.txt
+src/fyke.egg-info/dependency_links.txt
+src/fyke.egg-info/requires.txt
+src/fyke.egg-info/top_level.txt

@@ -1,0 +1,18 @@
+ethereum@ git+https://github.com/ethereum/execution-specs@78fb726158c69d8fa164e28f195fabf6ab59b915
+setuptools
+types-setuptools
+eth-tester@ git+https://github.com/fselmo/eth-tester@eels-backend
+requests<3,>=2.31.0
+requests_unixsocket2>=0.4.0
+pydantic<3,>=2.9.0
+ethereum-types<0.3,>=0.2.1
+ethereum-rlp<0.2,>=0.1.3
+jsonrpcserver<6,>=5.0.0
+
+[lint]
+ruff==0.9.4
+mypy<1.16,>=1.15.0
+types-requests
+
+[test]
+pytest-cov<5,>=4.1.0

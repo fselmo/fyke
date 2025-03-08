@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fyke"
+version = "1.0.0"
+description = "A tool to connect to the execution specs via JSON-RPC."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+keywords = ["ethereum", "testing", "blockchain", "fyke", "jsonrpc"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "ethereum @ git+https://github.com/ethereum/execution-specs@78fb726158c69d8fa164e28f195fabf6ab59b915",
+    "setuptools",
+    "types-setuptools",
+    "eth-tester @ git+https://github.com/fselmo/eth-tester@eels-backend",
+    "requests>=2.31.0,<3",
+    "requests_unixsocket2>=0.4.0",
+    "pydantic>=2.9.0,<3",
+    "ethereum-types>=0.2.1,<0.3",
+    "ethereum-rlp>=0.1.3,<0.2",
+    "jsonrpcserver>=5.0.0,<6",
+]
+
+[project.urls]
+Homepage = "https://github.com/ethereum/fyke"
+Repository = "https://github.com/ethereum/fyke"
+
+[project.optional-dependencies]
+test = ["pytest-cov>=4.1.0,<5"]
+lint = [
+    "ruff==0.9.4",
+    "mypy>=1.15.0,<1.16",
+    "types-requests"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["*tests*"]
+
+[tool.ruff]
+line-length = 99
+
+[tool.mypy]
+mypy_path = ["src", "$MYPY_CONFIG_FILE_DIR/stubs"]
+plugins = ["pydantic.mypy"]
